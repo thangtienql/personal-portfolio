@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/* ============================================
+   Drake Portfolio — Design Tokens
+   ============================================ */
+
+:root {
+  /* Background */
+  --bg-primary: #1f1f1f;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #999999;
+  --text-muted: #777777;
+
+  /* Accent */
+  --accent: #28e98c;
+  --accent-hover: #1cc97a;
+
+  /* Borders */
+  --border-color: #565656;
+  --border-light: #333333;
+
+  /* Card / Surface */
+  --surface: #252525;
+
+  /* Font */
+  --font-sans: "Inter", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-surface: var(--surface);
+  --color-border: var(--border-color);
+  --color-border-light: var(--border-light);
+  --font-sans: var(--font-inter, "Inter", sans-serif);
+  --animate-spin-slow: spin-slow 8s linear infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Base Styles */
+body {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: #000000;
+}
+
+/* Page Loader */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-loader .bounceball {
+  position: relative;
+  display: inline-block;
+  height: 37px;
+  width: 15px;
+}
+
+.page-loader .bounceball::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform-origin: 50%;
+  animation: bounceLoader 500ms alternate infinite ease;
+}
+
+@keyframes bounceLoader {
+  to {
+    transform: scaleY(0.3);
+  }
+  from {
+    transform: scaleY(1);
+  }
+}
