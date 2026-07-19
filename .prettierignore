@@ -1,0 +1,11 @@
+.next
+node_modules
+build
+out
+public
+.next
+*.md
+.next/**
+out/**
+build/**
+next-env.d.ts
