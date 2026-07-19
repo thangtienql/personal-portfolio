@@ -8,10 +8,7 @@
       ]
     },
     "codegraph": {
-      "command": "C:\\Users\\Admin\\AppData\\Local\\codegraph\\current\\node.exe",
-      "args": [
-        "C:\\Users\\Admin\\AppData\\Local\\codegraph\\current\\lib\\dist\\bin\\codegraph.js"
-      ]
+      "command": "codegraph"
     }
   }
 }
