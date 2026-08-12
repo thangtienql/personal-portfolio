@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 export default function ThreeBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -9,7 +9,7 @@ export default function ThreeBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     let width = (canvas.width = window.innerWidth);
@@ -50,7 +50,7 @@ export default function ThreeBackground() {
             ctx!.beginPath();
             ctx!.moveTo(particles[i].x, particles[i].y);
             ctx!.lineTo(particles[j].x, particles[j].y);
-            ctx!.strokeStyle = `rgba(40, 233, 140, ${0.04 * (1 - dist / 120)})`;
+            ctx!.strokeStyle = `rgba(245, 165, 36, ${0.04 * (1 - dist / 120)})`;
             ctx!.lineWidth = 0.5;
             ctx!.stroke();
           }
@@ -70,7 +70,7 @@ export default function ThreeBackground() {
 
         ctx!.beginPath();
         ctx!.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx!.fillStyle = `rgba(40, 233, 140, ${p.opacity})`;
+        ctx!.fillStyle = `rgba(245, 165, 36, ${p.opacity})`;
         ctx!.fill();
       });
 
@@ -84,19 +84,15 @@ export default function ThreeBackground() {
     }
 
     animate();
-    window.addEventListener("resize", onResize);
+    window.addEventListener('resize', onResize);
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", onResize);
+      window.removeEventListener('resize', onResize);
     };
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-0"
-      aria-hidden="true"
-    />
+    <canvas ref={canvasRef} className="pointer-events-none fixed inset-0 z-0" aria-hidden="true" />
   );
 }

@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* ============================================
    Drake Portfolio — Design Tokens
@@ -14,8 +14,8 @@
   --text-muted: #777777;
 
   /* Accent */
-  --accent: #28e98c;
-  --accent-hover: #1cc97a;
+  --accent: #f5a524;
+  --accent-hover: #d97706;
 
   /* Borders */
   --border-color: #565656;
@@ -25,7 +25,7 @@
   --surface: #252525;
 
   /* Font */
-  --font-sans: "Inter", sans-serif;
+  --font-sans: 'Inter', sans-serif;
 }
 
 @theme inline {
@@ -36,7 +36,7 @@
   --color-surface: var(--surface);
   --color-border: var(--border-color);
   --color-border-light: var(--border-light);
-  --font-sans: var(--font-inter, "Inter", sans-serif);
+  --font-sans: var(--font-inter, 'Inter', sans-serif);
   --animate-spin-slow: spin-slow 8s linear infinite;
 }
 
@@ -105,7 +105,7 @@ html {
 
 .page-loader .bounceball::before {
   position: absolute;
-  content: "";
+  content: '';
   display: block;
   top: 0;
   width: 15px;

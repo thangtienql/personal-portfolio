@@ -16,7 +16,7 @@ export interface Project {
   title: string;
   image: string;
   categories: string[];
-  size: "full" | "half";
+  size: 'full' | 'half';
 }
 
 export interface Testimonial {
@@ -45,4 +45,17 @@ export interface NavItem {
   id: string;
   label: string;
   icon: string;
+}
+
+export interface ColorToken {
+  name: string;
+  variable?: string;
+  hex: string;
+  usage: number;
+}
+
+export interface ColorGroup {
+  id: string;
+  label: string;
+  colors: ColorToken[];
 }
